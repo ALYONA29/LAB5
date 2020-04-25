@@ -1,0 +1,28 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "Unit5.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+list * addelem(list *lst, int number)
+{
+  list *temp, *p;
+  temp = (list*)malloc(sizeof(list));
+  p = lst->ptr; // сохранение указателя на следующий узел
+  lst->ptr = temp; // предыдущий узел указывает на создаваемый
+  temp->field = number; // сохранение поля данных добавляемого узла
+  temp->ptr = p; // созданный узел указывает на следующий элемент
+  return(temp);
+}
+
+list * init(int a) // а- значение первого узла
+{
+  list *lst;
+  // выделение памяти под корень списка
+  lst = (list*)malloc(sizeof(list));
+  lst->field = a;
+  lst->ptr = NULL; // это последний узел списка
+  return(lst);
+}

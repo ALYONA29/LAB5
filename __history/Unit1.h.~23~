@@ -1,0 +1,21 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit1H
+#define Unit1H
+//---------------------------------------------------------------------------
+#endif
+
+#include "Unit6.h"
+
+class list2 : public queue
+{
+  public:
+	//int field; // поле данных
+	list2 *next; // указатель на следующий элемент
+	list2 *prev; // указатель на предыдущий элемент
+	list2 * init(int a);
+	list2 * addelem(list2 *lst, int number);
+	list2 * deletelem(list2 *lst);
+	list2 * deletehead(list2 *root);
+    /*void*/ list2* list_unique(list2* lst);
+};
